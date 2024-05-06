@@ -27,7 +27,7 @@ public class BoardManager : MonoBehaviour
     }
     private void LateUpdate()
     {
-        if (slotIndex < 5)
+        if (slotIndex < 5 && rowIndex < 6)
         {
             currentSlot = rows[rowIndex].slots[slotIndex];
             currentSlot.GetComponent<Outline>().effectColor = Color.red ;     
@@ -67,7 +67,7 @@ public class BoardManager : MonoBehaviour
                 rowIndex++;
                 slotIndex = 0;
             }
-            else { endMenuToken.gameObject.SetActive(true); }
+            else { rowIndex = 6; endMenuToken.gameObject.SetActive(true); }
         }
     }
 
@@ -90,9 +90,6 @@ public class BoardManager : MonoBehaviour
             else { rows[rowIndex].slots[i].GetComponent<Image>().color = wrongColor; }
         }
         if (correctness == 5) { endMenuToken.gameObject.SetActive(true); }
-        {
-
-        }
     }
 
     public void GenerateWord() 

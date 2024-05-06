@@ -20,7 +20,7 @@ public class EndGameMenu : MonoBehaviour
             resultToken.color = Color.red;
             resultToken.text = "!!! try again !!!";
         }
-        guessToken.text = "guess use : "+ FindObjectOfType<BoardManager>().rowIndex;
+        guessToken.text = "the word is : " + FindObjectOfType<BoardManager>().wordToken.text+"\n"+"guess use : " + FindObjectOfType<BoardManager>().rowIndex;
     }
 
     public void RestartGame()
